@@ -4,12 +4,16 @@ class ToDoItem extends Component {
   render () {
     return (
       <div>
-        <label>Nombre de la tarea</label>
-        <p>Contenido de la tarea.</p>
+        <hr/>
         <input type="checkbox" />
-        <button>Borrar</button>
+        <label>Contenido de la tarea</label>
+        <button onClick={this.deleteTask}>Borrar</button>
       </div>
     );
+  }
+
+  deleteTask = () => {
+    alert('se borra tarea');
   }
 }
 

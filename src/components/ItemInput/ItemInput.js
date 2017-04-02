@@ -5,9 +5,13 @@ class ItemInput extends Component {
     return (
       <div>
         <input type='text'></input>
-        <button>Agregar</button>
+        <button onClick={this.addTask}>Agregar</button>
       </div>
     );
+  }
+
+  addTask = () => {
+    alert('se agrega tarea');
   }
 }
 

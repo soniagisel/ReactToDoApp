@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-//import ItemInput from './components/ItemInput/ItemInput';
+import ItemInput from './components/ItemInput/ItemInput';
 import ItemList from './components/ItemList/ItemList';
 //import Counters from './components/Counters/Counters';
-
 
 class ToDos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDos: [
-        { id: 0, task: 'Planchar', checked: false },
-        { id: 1, task: 'Cocinar', checked: false }
-      ]
+      toDos: []
     };
   }
-  CreateItem()  {
-
+  _createTask(task)  {
+    this.setState({
+      toDos: [...this.state.toDos, { task, checked: false }]
+    })
   }
 
-  deleteToDo(index) {
-
+  _deleteToDo(index) {
+    console.log('Se va a eliminar la task con index ' + index);
   }
 
-  checkedItem(index, value) {
+  _checkedItem(index, value) {
 
   }
 
@@ -30,7 +28,8 @@ class ToDos extends Component {
     return (
       <div>
         <h1>Mi lista de tareas</h1>
-        <ItemList toDoList={this.state.toDos} />
+        <ItemInput createTask={(task) => this._createTask(task)}/>
+        <ItemList toDoList={this.state.toDos} toDelete={(index) => this._deleteToDo(index)} />
       </div>
     );
   }

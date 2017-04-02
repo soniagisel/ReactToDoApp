@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import ToDoItem from '../ToDoItem/ToDoItem';
+import ToDoItem from '../ToDoItem/ToDoItem';
 
 class ItemList extends Component {
 
@@ -8,7 +8,13 @@ class ItemList extends Component {
     return (
       <div>
         <h1>List of ToDos</h1>
-        {toDoList.map(todo => (<p key={todo.id}>{todo.task}</p>))}
+        {toDoList.map((todo, index) => (
+          <ToDoItem
+            key={index}
+            id={index}
+            deleteTask={this.props.toDelete}>
+              {todo.task}
+            </ToDoItem>))}
       </div>
     );
   }

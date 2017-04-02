@@ -4,14 +4,13 @@ class ItemInput extends Component {
   render() {
     return (
       <div>
-        <input type='text'></input>
-        <button onClick={this.addTask}>Agregar</button>
+        <input ref='taskInput' type='text' />
+        <button onClick={() => {
+          const inputValue = this.refs.taskInput.value;
+          this.props.createTask(inputValue)
+        }}>Agregar</button>
       </div>
     );
-  }
-
-  addTask = () => {
-    alert('se agrega tarea');
   }
 }
 

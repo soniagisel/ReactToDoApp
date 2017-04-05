@@ -12,6 +12,7 @@ class ItemList extends Component {
           <ToDoItem
             key={index}
             id={index}
+            task={todo.task}
             deleteTask={this.props.toDelete}>
               {todo.task}
             </ToDoItem>))}

@@ -13,7 +13,7 @@ class ToDoItem extends Component {
       <div>
         <hr/>
         <input type="checkbox" />
-        <label>Contenido de la tarea</label>
+        <label>{this.props.task}</label>
         <button onClick={ () => {
             const itemIndex = this.props.id;
             this.props.deleteTask(itemIndex)}}>

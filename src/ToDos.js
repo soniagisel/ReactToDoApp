@@ -17,7 +17,12 @@ class ToDos extends Component {
   }
 
   _deleteToDo(index) {
-    console.log('Se va a eliminar la task con index ' + index);
+    const state = { ...this.state };
+    const array = state.toDos;
+    array.splice(index, 1);
+    this.setState({
+      toDos: array
+    })
   }
 
   _checkedItem(index, value) {
